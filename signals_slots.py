@@ -10,6 +10,7 @@ from PyQt5.QtWidgets import QPushButton
 from PyQt5.QtWidgets import QVBoxLayout
 from PyQt5.QtWidgets import QWidget
 
+
 def greeting():
     """Slot function."""
     if msg.text():
@@ -17,16 +18,17 @@ def greeting():
     else:
         msg.setText("Hello world!")
 
+
 app = QApplication(sys.argv)
 window = QWidget()
-window.setWindowTitle('Signals and slots')
+window.setWindowTitle("Signals and slots")
 layout = QVBoxLayout()
 
-btn = QPushButton('Greet')
-btn.clicked.connect(greeting) # Connect clicked to greeting()
+btn = QPushButton("Greet")
+btn.clicked.connect(greeting)  # Connect clicked to greeting()
 
 layout.addWidget(btn)
-msg = QLabel('')
+msg = QLabel("")
 layout.addWidget(msg)
 window.setLayout(layout)
 window.show()
